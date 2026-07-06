@@ -3,7 +3,7 @@ import "./OurClients.css";
 
 const OurClients = () => {
   return (
-    <section className="our-clients-section" aria-label="Our Clients">
+    <section className="our-clients-section" id="clients" aria-label="Our Clients">
       <div className="clients-header">
         <h2 className="clients-title">OUR CLIENTS</h2>
         <p className="clients-subtitle">Trusted by India&apos;s Leading Brands</p>

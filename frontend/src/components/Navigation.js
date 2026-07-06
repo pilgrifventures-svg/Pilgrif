@@ -12,6 +12,16 @@ const Navigation = () => {
     { label: "CONTACT", id: "contact" }
   ];
 
+  const handleNavClick = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   return (
     <nav className="navigation">
       <div className="nav-content">
@@ -32,6 +42,7 @@ const Navigation = () => {
               className={`nav-item ${hoveredItem === item.id ? 'hovered' : ''}`}
               onMouseEnter={() => setHoveredItem(item.id)}
               onMouseLeave={() => setHoveredItem(null)}
+              onClick={() => handleNavClick(item.id)}
             >
               {item.label}
             </button>

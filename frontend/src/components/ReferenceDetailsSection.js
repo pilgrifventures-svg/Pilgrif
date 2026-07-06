@@ -60,7 +60,7 @@ const ReferenceDetailsSection = () => {
   const { ref: cardRef, active: cardIn } = useScaleReveal("-15% 0px -70% 0px");
 
   return (
-    <section className="cine-details" aria-label="Spider-Man 4 Details">
+    <section className="cine-details" id="services" aria-label="Spider-Man 4 Details">
       <div className="details-wrap">
         {/* Row markers */}
         <div ref={markersRef} className="top-row">

@@ -58,7 +58,7 @@ const ReferenceSection = () => {
 
   return (
 
-    <section className="cine-section" aria-label="Cine Daily Reference Section">
+    <section className="cine-section" id="portfolio" aria-label="Cine Daily Reference Section">
       {/* Top dark panel */}
       <div className="cine-top">
         <div className="cine-top-inner">
