@@ -1,0 +1,166 @@
+.our-clients-section {
+  background: #000000;
+  padding: 80px 40px;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+body.page-loaded .our-clients-section {
+  opacity: 1;
+  transform: none;
+}
+
+.clients-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.clients-title {
+  font-size: 48px;
+  font-weight: 700;
+  color: #D4AF37;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.clients-subtitle {
+  font-size: 18px;
+  color: #888;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+}
+
+.clients-logos-grid {
+  max-width: 900px;
+  margin: 0 auto 60px;
+  padding: 40px;
+  background: #0a0a0a;
+  border-radius: 16px;
+  border: 1px solid #1a1a1a;
+  transition: all 0.4s ease;
+}
+
+.clients-logos-grid:hover {
+  border-color: #D4AF37;
+  box-shadow: 0 10px 40px rgba(212, 175, 55, 0.15);
+  transform: translateY(-5px);
+}
+
+.clients-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+.clients-description {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.description-text {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #bbb;
+  margin-bottom: 50px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+.description-text strong {
+  color: #D4AF37;
+  font-weight: 600;
+}
+
+.stats-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.stat-number {
+  font-size: 48px;
+  font-weight: 700;
+  color: #D4AF37;
+  letter-spacing: 0.05em;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .our-clients-section {
+    padding: 60px 24px;
+  }
+
+  .clients-title {
+    font-size: 32px;
+  }
+
+  .clients-subtitle {
+    font-size: 14px;
+  }
+
+  .clients-logos-grid {
+    padding: 24px;
+    margin-bottom: 40px;
+  }
+
+  .description-text {
+    font-size: 14px;
+    margin-bottom: 40px;
+  }
+
+  .stats-row {
+    gap: 40px;
+  }
+
+  .stat-number {
+    font-size: 36px;
+  }
+
+  .stat-label {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .clients-title {
+    font-size: 24px;
+  }
+
+  .clients-logos-grid {
+    padding: 16px;
+  }
+
+  .description-text {
+    font-size: 13px;
+  }
+
+  .stats-row {
+    gap: 30px;
+  }
+
+  .stat-number {
+    font-size: 28px;
+  }
+}

@@ -1,0 +1,118 @@
+:root {
+  --title-circle-d: 480px;
+  --scroller-gap: -2px;
+}
+
+.main-title-section {
+  position: relative;
+  height: 45vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  margin-bottom: 120px;
+}
+
+/* Remove company subtitle - no longer needed */
+.company-subtitle {
+  display: none;
+}
+
+/* Remove cast names */
+.cast-names {
+  display: none;
+}
+
+.title-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  width: 100%;
+  height: 100%; /* ensure fit-text container has height to compute against */
+}
+
+.background-shape {
+  position: absolute; /* scrolls with content */
+  top: 50%; left: 50%;
+  width: var(--title-circle-d);
+  height: var(--title-circle-d);
+  transform: translate(-50%, -50%) scale(0.96);
+  transform-origin: bottom center;
+  background: #D4AF37; /* 100% opacity */
+  border-radius: 50%;
+  z-index: 4; /* keep circle under hero */
+  pointer-events: none;
+  opacity: 0; /* fade in */
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* Activate circle on page load */
+body.page-loaded .background-shape { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+
+.main-title { position: relative; z-index: 15; width: 100%; max-width: 1440px; padding: 0 80px; margin: 0 auto; display: flex; justify-content: center; height: 100%; }
+
+/* Container used for measuring and fitting text */
+.fit-text-container { position: relative; width: 100%; height: 100%; min-height: 160px; display: flex; align-items: center; justify-content: center; }
+
+.title-text {
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 600; color: #ffffff; letter-spacing: -0.04em; line-height: 1;
+  width: 100%; text-align: center; display: inline-block; text-transform: uppercase; white-space: nowrap; overflow: visible; max-width: none;
+  opacity: 0; transform: translateX(-12px); transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* Activate title on page load */
+body.page-loaded .title-text { opacity: 1 !important; transform: none; }
+
+/* Bottom-center overlay - remove Spider-Man character */
+.bottom-hero-placeholder {
+  display: none;
+}
+
+/* Infinite scroller styles - restored */
+.infinite-scroller-container {
+  position: absolute; /* scrolls with content */
+  top: calc(50% + (var(--title-circle-d) / 2) + var(--scroller-gap) - 32px); /* exactly below the red circle, nudged up 32px */
+  left: 50%; width: 104vw; max-width: none; margin-left: -52vw; height: 96px; background: #101010; overflow: hidden;
+  box-sizing: border-box; padding: 12px 0; /* explicit top/bottom padding */
+  display: flex; justify-content: center; align-items: center;
+  transform: rotate(357deg); transform-origin: center; z-index: 12; pointer-events: none;
+  opacity: 0; transition: opacity 0.4s ease;
+}
+body.page-loaded .infinite-scroller-container { opacity: 1; }
+
+.infinite-scroller { overflow: hidden; width: 110vw; max-width: none; margin-left: -5vw; }
+
+.scroller-track { display: inline-flex; align-items: center; gap: 16px; width: max-content; padding: 0; animation: scroll-left 20s linear infinite; will-change: transform; }
+
+/* Scoped avatar class to avoid collisions with other sections */
+.scroller-avatar { width: 56px; height: 56px; border-radius: 50%; background: #2a2a2a; border: 2px solid #D4AF37; flex: 0 0 auto; overflow: hidden; }
+.scroller-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+@keyframes scroll-left { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+@media (max-width: 1024px) { :root { --title-circle-d: 420px; } .main-title-section { margin-bottom: 100px; } }
+@media (max-width: 768px) { 
+  .main-title-section { 
+    height: 35vh; 
+    margin: 0.5rem 0; 
+    margin-bottom: 80px;
+  } 
+  :root { --title-circle-d: 320px; }
+  .infinite-scroller-container {
+    top: calc(50% + (var(--title-circle-d) / 2) + 20px);
+  }
+}
+@media (max-width: 480px) { 
+  .main-title-section { 
+    height: 30vh;
+    margin-bottom: 60px;
+  } 
+  :root { --title-circle-d: 220px; }
+  .infinite-scroller-container {
+    height: 80px;
+  }
+}
