@@ -24,6 +24,15 @@ const SPACING = {
   OFFSET_VALUE: 22,
 };
 
+const ANIMATION_CONFIG = {
+  BORDER_RADIUS_START: 28,
+  BORDER_RADIUS_MID: 22,
+  BORDER_RADIUS_END: 16,
+  SEGMENT_1_PROGRESS: 0.6, // First 60% of animation
+  SEGMENT_2_PROGRESS: 0.4, // Last 40% of animation
+  MEASURE_DELAY_MS: 60,
+};
+
 const lerp = (a, b, t) => a + (b - a) * t;
 const clamp = (v, min, max) => Math.max(min, Math.min(max, v));
 
@@ -111,8 +120,9 @@ const FloatingRedPlaceholder = () => {
     setEnabled(true);
   };
 
+  // Setup resize and orientation listeners on mount only
   useEffect(() => {
-    const t = setTimeout(measure, 60);
+    const t = setTimeout(measure, ANIMATION_CONFIG.MEASURE_DELAY_MS);
     window.addEventListener("resize", measure);
     window.addEventListener("orientationchange", measure);
     return () => {
@@ -122,6 +132,7 @@ const FloatingRedPlaceholder = () => {
     };
   }, []);
 
+  // Setup scroll-based animation loop - runs when enabled changes
   useEffect(() => {
     if (!enabled) return;
     let raf = 0;
@@ -139,20 +150,20 @@ const FloatingRedPlaceholder = () => {
       let pGlobal = 0;
       if (y <= s.midScroll) {
         const p1 = clamp((y - s.startScroll) / seg1Len, 0, 1);
-        pGlobal = p1 * 0.6; // reserve first 60% of the animation
+        pGlobal = p1 * ANIMATION_CONFIG.SEGMENT_1_PROGRESS;
         cxDoc = lerp(s.startCenter.x, s.midCenter.x, p1);
         cyDoc = lerp(s.startCenter.y, s.midCenter.y, p1);
         w = lerp(s.originW, s.midW, p1);
         h = lerp(s.originH, s.midH, p1);
-        r = lerp(28, 22, p1);
+        r = lerp(ANIMATION_CONFIG.BORDER_RADIUS_START, ANIMATION_CONFIG.BORDER_RADIUS_MID, p1);
       } else {
         const p2 = clamp((y - s.midScroll) / seg2Len, 0, 1);
-        pGlobal = 0.6 + p2 * 0.4; // last 40%
+        pGlobal = ANIMATION_CONFIG.SEGMENT_1_PROGRESS + p2 * ANIMATION_CONFIG.SEGMENT_2_PROGRESS;
         cxDoc = lerp(s.midCenter.x, s.endCenter.x, p2);
         cyDoc = lerp(s.midCenter.y, s.endCenter.y, p2);
         w = lerp(s.midW, s.targetW, p2);
         h = lerp(s.midH, s.targetH, p2);
-        r = lerp(22, 16, p2);
+        r = lerp(ANIMATION_CONFIG.BORDER_RADIUS_MID, ANIMATION_CONFIG.BORDER_RADIUS_END, p2);
       }
 
       // Snap exactly to target box at the very end to ensure perfect alignment

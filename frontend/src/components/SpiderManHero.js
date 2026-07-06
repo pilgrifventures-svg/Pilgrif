@@ -7,7 +7,7 @@ import "./SpiderManHero.css";
 import { initFitTextClass } from "../utils/fitText";
 
 const SpiderManHero = () => {
-  // Add a page-loaded class to body on mount to trigger CSS-only animations
+  // Initialize fit text and add page-loaded class on mount only
   useEffect(() => {
     document.body.classList.add("page-loaded");
     const cleanupFit = initFitTextClass({ defaultMin: 24, defaultMax: 220 });

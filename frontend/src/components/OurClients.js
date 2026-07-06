@@ -6,7 +6,7 @@ const OurClients = () => {
     <section className="our-clients-section" aria-label="Our Clients">
       <div className="clients-header">
         <h2 className="clients-title">OUR CLIENTS</h2>
-        <p className="clients-subtitle">Trusted by India's Leading Brands</p>
+        <p className="clients-subtitle">Trusted by India&apos;s Leading Brands</p>
       </div>
       
       <div className="clients-logos-grid">
@@ -19,7 +19,7 @@ const OurClients = () => {
 
       <div className="clients-description">
         <p className="description-text">
-          Our portfolio includes successful campaigns for some of India's most recognized brands, including <strong>Fastrack</strong>, <strong>Lifebuoy</strong>, <strong>NIVEA</strong>, <strong>BG BGAUSS</strong>, <strong>Mirabelle Korea</strong>, <strong>Mamaearth</strong>, and <strong>State Bank of India (SBI)</strong>. We have also conceptualized and created the official regional mascot for SBI Uttarakhand Circle, showcasing our ability to build memorable brand assets beyond traditional marketing campaigns.
+          Our portfolio includes successful campaigns for some of India&apos;s most recognized brands, including <strong>Fastrack</strong>, <strong>Lifebuoy</strong>, <strong>NIVEA</strong>, <strong>BG BGAUSS</strong>, <strong>Mirabelle Korea</strong>, <strong>Mamaearth</strong>, and <strong>State Bank of India (SBI)</strong>. We have also conceptualized and created the official regional mascot for SBI Uttarakhand Circle, showcasing our ability to build memorable brand assets beyond traditional marketing campaigns.
         </p>
         <div className="stats-row">
           <div className="stat-item">

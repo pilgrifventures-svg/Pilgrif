@@ -6,6 +6,7 @@ const WhiteStage = ({ children }) => {
   const ref = useRef(null);
   const [active, setActive] = useState(false);
 
+  // Setup intersection observer and scroll listeners on mount only
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
