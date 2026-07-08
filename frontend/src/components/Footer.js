@@ -1,5 +1,6 @@
 import React from "react";
 import "./Footer.css";
+import logoPilgrif from "../assets/logoPilgrif.PNG";
 
 const Footer = () => {
   return (
@@ -16,7 +17,7 @@ const Footer = () => {
         {/* Logo */}
         <div className="footer-logo">
           <img 
-            src="https://customer-assets.emergentagent.com/job_11adb678-f32d-457d-9662-a7feb0b96738/artifacts/vfebr6op_IMG_1204.png"
+            src={logoPilgrif}
             alt="Pilgrif Ventures"
             className="footer-logo-img"
           />
