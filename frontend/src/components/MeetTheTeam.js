@@ -1,5 +1,9 @@
 import React from "react";
 import "./MeetTheTeam.css";
+import founderKaran from "../assets/founderKaran.webp";
+import FinancePriyanshu from "../assets/FinancePriyanshu.webp";
+import RMRiddhi from "../assets/RMRiddhi.webp";
+import MarketingIsha from "../assets/MarketingIsha.webp";
 
 const MeetTheTeam = () => {
   const teamMembers = [
@@ -7,25 +11,25 @@ const MeetTheTeam = () => {
       id: "karan-kukreti",
       name: "Karan Kukreti",
       designation: "Founder & CEO",
-      image: "https://customer-assets.emergentagent.com/job_11adb678-f32d-457d-9662-a7feb0b96738/artifacts/m8ncr2lz_74A9A33B-91F3-4617-88BE-3EA98AE7BF6D.png"
+      image: founderKaran,
     },
     {
       id: "priyanshu-bhatt",
       name: "Priyanshu Bhatt",
       designation: "Chief Financial Officer",
-      image: "https://customer-assets.emergentagent.com/job_11adb678-f32d-457d-9662-a7feb0b96738/artifacts/d7shfeob_6A6366AD-E195-4CB4-B192-243D7A055415.png"
+      image: FinancePriyanshu,
     },
     {
       id: "riddhi-naithani",
       name: "Riddhi Naithani",
       designation: "Relationships Manager",
-      image: "https://customer-assets.emergentagent.com/job_11adb678-f32d-457d-9662-a7feb0b96738/artifacts/pi5nzdim_69091E5D-AD8C-45AC-BFAC-B9A272F32C98.png"
+      image: RMRiddhi,
     },
     {
       id: "isha-kukreti",
       name: "Isha Kukreti",
       designation: "Content Marketing Manager",
-      image: "https://customer-assets.emergentagent.com/job_11adb678-f32d-457d-9662-a7feb0b96738/artifacts/zs0g6hxf_3D592A36-DA48-4EBE-8CDB-C5018E1BFA87.jpeg"
+      image: MarketingIsha,
     }
   ];
 
