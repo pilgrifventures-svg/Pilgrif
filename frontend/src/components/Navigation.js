@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Search, Menu } from "lucide-react";
 import "./Navigation.css";
+import logoPilgrif from "../assets/logoPilgrif.PNG";
 
 const Navigation = () => {
   const [hoveredItem, setHoveredItem] = useState(null);
@@ -29,7 +30,7 @@ const Navigation = () => {
         <div className="nav-logo">
           <img
             className="logo-image"
-            src="https://customer-assets.emergentagent.com/job_11adb678-f32d-457d-9662-a7feb0b96738/artifacts/vfebr6op_IMG_1204.png"
+            src={logoPilgrif}
             alt="Pilgrif Ventures logo"
           />
         </div>
